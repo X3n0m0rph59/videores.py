@@ -1,21 +1,22 @@
-#!/bin/env python
+#!/bin/env python3
 
 from ffvideo import VideoStream
 from glob import iglob
 from os import getcwd, chdir
+
 import sys
 
+
 def print_usage():
-    pass
+    print("videores.py")    
 
 
-def enum_files(dir):
-    chdir(dir)
-    for file in iglob("*.mkv"):
-        vs = VideoStream(file)
-        print "Res: %dx%d\tFile: %s" % (vs.frame_width, vs.frame_height, file)
+def enum_files(directory):
+    chdir(directory)
+    for f in iglob("*.mkv"):
+        vs = VideoStream(f)
+        print("Res: %dx%d\tFile: %s") % (vs.frame_width, vs.frame_height, f)
 
-if __name__ == "__main__":
-    print("videores.py")
+if __name__ == "__main__":    
     enum_files(sys.argv[1])
 
