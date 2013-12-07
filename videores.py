@@ -1,8 +1,9 @@
-#!/bin/env python
+#!/bin/env python3
 
 from ffvideo import VideoStream
 from glob import iglob
 from os import getcwd, chdir
+
 import sys
 
 
